@@ -9,8 +9,8 @@ export default function OpcionPropiedad({ datosPropiedad, handleChange }) {
         name="tipoPropiedad"
         id="propiedad"
         onChange={handleChange}
-        value={datosPropiedad.tipoPropiedad}
-      ><option value="" disabled>
+       
+      ><option defaultValue={""}>
           ....
         </option>
         {datosPropiedad.map((propiedad, index) => (

@@ -70,12 +70,9 @@ export default function Boton({ handleSubmit }) {
   };
   
   return (
-    
-    
       <div className='center div-cotizador'>       
       <button className="button" id="cotizar" onClick={handleSubmit}> Cotizar </button>
-      <p className="importe">Precio estimado: ${ valorPoliza}</p><span className="guardar" id="guardar" title="Guardar en historial" onClick={handleGuardar}>💾</span>
-        
+      <p className="importe">Precio estimado: ${parseFloat(valorPoliza).toFixed(2)}</p><span className="guardar" id="guardar" title="Guardar en historial" onClick={handleGuardar}>💾</span>
       </div>
       
     

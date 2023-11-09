@@ -23,7 +23,7 @@ function Formulario() {
     { tipo: 'Costa Atlántica', factor: 1.29 },
     { tipo: 'Patagonia', factor: 1.00 },
   ];
-   const [metrosCuadrados, setMetrosCuadrados] = useState(0);
+   
    const [datos, setDatos] = useState({
     tipoPropiedad: '',
     tipoUbicacion: '',
@@ -33,7 +33,7 @@ function Formulario() {
   });
 
   useEffect(() => {
-    const { tipoPropiedad, tipoUbicacion } = datos;
+   
     fetch(`https://6547b141902874dff3aca530.mockapi.io/propiedades`)
       .then((response) => response.json())
       .then((data) => {
@@ -93,11 +93,11 @@ function Formulario() {
     <>
       <div className="center div-cotizador">
         <h2 className="center separador">Completa los datos solicitados</h2>
-        <OpcionPropiedad {...{ datosPropiedad, handleChange }} />
-        <OpcionUbicacion {...{ datosUbicacion, handleChange }} />
-        <InputMetrosCuadrados {...{ handleChange, datos }} />
+        <OpcionPropiedad  datosPropiedad={datosPropiedad} handleChange={handleChange} {...{ datosPropiedad, handleChange }} />
+        <OpcionUbicacion datosUbicacion={datosUbicacion } handleChange={handleChange} {...{ datosUbicacion, handleChange }} />
+        <InputMetrosCuadrados datos={datos} {...{ handleChange, datos }} />
         <div className="center separador">
-        <Boton handleSubmit={... handleSubmit } />
+        <Boton datos={datos} datosPropiedad={datosPropiedad} datosUbicacion={datosUbicacion} costoM2={costoM2} {...{ datos }} />
         </div>
       </div>
     </>

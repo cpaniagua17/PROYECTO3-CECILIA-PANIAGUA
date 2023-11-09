@@ -5,14 +5,14 @@ export default function OpcionUbicacion({ datosUbicacion, handleChange }) {
     <div>
       <label htmlFor="ubicacion">Selecciona su ubicación</label>
       <select
-        name="tipoUbicacion"
+        name="tipoUbicacion"       
         id="ubicacion"
-        onChange={handleChange}
-        value={datosUbicacion.tipoUbicacion}><option value=" " disabled>
+        onChange={handleChange}>
+        <option defaultValue={""}>
           ...
         </option>
-          {datosUbicacion.map((ubicacion, index) => (
-          <option key={ubicacion.tipo} value={ubicacion.tipo}>
+          {datosUbicacion.map((ubicacion,index) => (
+          <option key={index}  value={ubicacion.tipo}>
             {ubicacion.tipo}
           </option>
         ))}
